@@ -6,7 +6,7 @@ const About = () => {
     "Pixel Perfect UI",
     "Frontend Performance",
     "Responsive Design",
-    "Motion Design",
+    "Graphic Design",
     "Problem Solving",
   ];
   return (
