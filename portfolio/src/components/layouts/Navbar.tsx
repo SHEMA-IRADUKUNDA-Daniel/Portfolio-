@@ -1,8 +1,10 @@
+import Button from "../Button";
+
 const NavBar = () => {
   return (
     <nav className="flex items-center justify-between mb-20">
       <div className=" text-white text-2xl font-serif ">
-        D<span className="text-lime-300">S.</span>
+        D<span className="text-primary">S.</span>
       </div>
       <ul className="flex gap-9">
         {[
@@ -16,15 +18,16 @@ const NavBar = () => {
         ].map((item) => (
           <li
             key={item}
-            className="text-white/40 hover:text-lime-300 transition cursor-pointer text-sm font-medium"
+            className="text-white/40 hover:text-primary transition cursor-pointer text-sm font-medium"
           >
             {item}
           </li>
         ))}
       </ul>
-      <button className="px-4 py-2 rounded-full bg-lime-300 text-black font-medium cursor-pointer hover:bg-lime-300/20 hover:text-lime-300 transition">
-        Hire me
-      </button>
+      <Button
+        text="Hire me"
+        className="px-4 py-2 rounded-full bg-primary text-black font-medium cursor-pointer hover:bg-primary/20 hover:text-lime-300 transition"
+      />
     </nav>
   );
 };
