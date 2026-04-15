@@ -117,7 +117,7 @@ const Blogs = () => {
           <div className="relative mx-auto w-full  max-w-3xl mt-30 md:mt-5 rounded-4xl border border-white/10 bg-zinc-950 p-8">
             <button
               onClick={() => setSelectedBlog(null)}
-              className="absolute bg-primary rounded-full p-2 cursor-pointer -top-6  -right-6 text-white"
+              className="absolute bg-primary rounded-full p-2 cursor-pointer -top-5  -right-5 text-white"
             >
               <X size={28} />
             </button>
