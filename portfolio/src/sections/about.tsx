@@ -1,4 +1,4 @@
-import HeroImageComponent from "../components/HeroImage";
+import AboutImageComponent from "../components/AboutImage";
 
 const About = () => {
   const strengths = [
@@ -12,12 +12,12 @@ const About = () => {
   return (
     <section
       id="About"
-      className=" px-6 md:px-16 pt-10 pb-24 bg-black/90 text-white grid lg:grid-cols-2 gap-14 items-center"
+      className=" px-6 md:px-16 pt-5 pb-10 bg-black/90 text-white grid lg:grid-cols-2 gap-14 items-center"
     >
       {/* left */}
       <div className="relative max-w-md">
         <div className="absolute -inset-3 rounded-4xl border border-primary/10 blur-xl" />
-        <HeroImageComponent />
+        <AboutImageComponent />
         <div className="absolute -bottom-6 -right-6 bg-zinc-950/80 border border-white/10 rounded-3xl px-6 py-4 ">
           <p className="text-3xl font-light text-primary">3+ yrs</p>
           <p className="text-sm text-zinc-400">Building digital products</p>
