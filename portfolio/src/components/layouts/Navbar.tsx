@@ -35,7 +35,7 @@ const NavBar = () => {
       </ul>
 
       <Button
-        text="Hire me"
+        text="Get in touch"
         className=" px-4 py-2 rounded-full bg-primary text-black font-medium cursor-pointer hover:bg-primary/20 hover:text-lime-300 transition"
       />
       <button
