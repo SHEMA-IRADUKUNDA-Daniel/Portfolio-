@@ -7,3 +7,7 @@ export interface ButtonProps {
   variant?: string;
   download?: boolean;
 }
+export interface ContactIconsProps {
+  className?: string;
+  onClick?: () => void;
+}

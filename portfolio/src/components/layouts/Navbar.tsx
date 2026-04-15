@@ -35,7 +35,8 @@ const NavBar = () => {
       </ul>
 
       <Button
-        text="Hire me"
+        href="#Contact"
+        text="Get in touch"
         className=" px-4 py-2 rounded-full bg-primary text-black font-medium cursor-pointer hover:bg-primary/20 hover:text-lime-300 transition"
       />
       <button
@@ -66,7 +67,7 @@ const NavBar = () => {
 
           <div className="mt-6">
             <Button
-              text="Hire me"
+              text="Get in touch"
               className="w-full px-4 py-3 rounded-full bg-primary text-black font-medium"
             />
           </div>
