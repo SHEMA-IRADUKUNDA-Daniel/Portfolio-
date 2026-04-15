@@ -1,9 +1,13 @@
 import Button from "../components/Button";
 import HeroImageComponent from "../components/HeroImage";
 import NavBar from "../components/layouts/Navbar";
+import myCV from "../assets/myCV..pdf";
 const Hero = () => {
   return (
-    <section className="px-6 md:px-16 pt-10 pb-24 bg-black text-white">
+    <section
+      id="Home"
+      className="px-6 md:px-16 pt-10 pb-24 bg-black text-white"
+    >
       <NavBar />
 
       <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -30,11 +34,15 @@ const Hero = () => {
 
           <div className="flex gap-4 mb-14">
             <Button
+              href="#Projects"
               text="See my work"
               className="px-6 py-3 rounded-full bg-primary text-black font-medium cursor-pointer hover:bg-primary/20 hover:text-primary transition"
             />
 
             <Button
+              variant="outline"
+              href={myCV}
+              download
               text="Download CV"
               className="px-6 py-3 rounded-full border border-white/10 text-zinc-300 cursor-pointer hover:bg-white/10 hover:text-white transition"
             />
