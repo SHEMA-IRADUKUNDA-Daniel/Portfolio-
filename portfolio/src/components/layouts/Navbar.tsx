@@ -5,27 +5,31 @@ import { Menu, X } from "lucide-react";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = [
-    "Home",
-    "About",
-    "Skills",
-    "Experience",
-    "Blogs",
-    "Testimonials",
-    "Contact",
+    { label: "Home", href: "#Home" },
+    { label: "About", href: "#About" },
+    { label: "Skills", href: "#Skills" },
+    { label: "Projects", href: "#Projects" },
+    { label: "Experience", href: "#Experience" },
+    { label: "Blogs", href: "#Blogs" },
+    { label: "Testimonials", href: "#Testimonials" },
+    { label: "Contact", href: "#Contact" },
   ];
 
   return (
-    <nav className="flex items-center justify-between mb-20">
+    <nav className="flex flex-wrap items-center justify-between mb-20">
       <div className=" text-white text-2xl font-serif ">
         D<span className="text-primary">S.</span>
       </div>
       <ul className=" hidden md:flex gap-6 ">
         {navLinks.map((item) => (
-          <li
-            key={item}
-            className="text-white/40 hover:text-primary transition cursor-pointer text-sm font-medium"
-          >
-            {item}
+          <li key={item.href}>
+            <a
+              href={item.href}
+              className="text-white/40 hover:text-primary transition cursor-pointer text-sm font-medium"
+            >
+              {" "}
+              {item.label}
+            </a>
           </li>
         ))}
       </ul>
@@ -49,11 +53,13 @@ const NavBar = () => {
           </div>
           <ul className="flex flex-col gap-5">
             {navLinks.map((item) => (
-              <li
-                key={item}
-                className="text-white/70 hover:text-primary transition cursor-pointer text-sm font-medium"
-              >
-                {item}
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  className="text-white/70 hover:text-primary transition cursor-pointer text-sm font-medium"
+                >
+                  {item.label}
+                </a>
               </li>
             ))}
           </ul>

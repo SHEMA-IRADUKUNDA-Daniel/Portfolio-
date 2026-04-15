@@ -2,4 +2,9 @@
 
 @theme {
   --color-primary: #c8f04a;
+  --color-violetSecondary: #a599ff;
+  --color-amberThirdly: #ffa064;
+}
+html {
+  scroll-behavior: smooth;
 }
