@@ -20,7 +20,7 @@ const NavBar = () => {
       <div className=" text-white text-2xl font-serif ">
         D<span className="text-primary">S.</span>
       </div>
-      <ul className=" hidden md:flex gap-6 ">
+      <ul className=" hidden md:flex gap-6  ">
         {navLinks.map((item) => (
           <li key={item.href}>
             <a
@@ -46,13 +46,13 @@ const NavBar = () => {
         <Menu size={28} />
       </button>
       {isOpen && (
-        <div className="absolute top-0 left-0 w-full  border border-white/10 bg-zinc-950 p-6 md:hidden z-50">
+        <div className="absolute top-0 left-0 w-full h-full  border border-white/10 bg-zinc-950 p-6 md:hidden z-50">
           <div className="flex justify-end mb-6">
             <button onClick={() => setIsOpen(false)} className="text-white">
               <X size={28} />
             </button>
           </div>
-          <ul className="flex flex-col gap-5">
+          <ul className="flex flex-col gap-8">
             {navLinks.map((item) => (
               <li key={item.href}>
                 <a
