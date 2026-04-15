@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="Home"
-      className="px-6 md:px-16 pt-10 pb-24 bg-black text-white"
+      className="px-6 md:px-16 pt-10 pb-30 bg-black text-white"
     >
       <NavBar />
 
@@ -76,8 +76,8 @@ const Hero = () => {
 
           <HeroImageComponent />
 
-          <div className="absolute -bottom-20 left-6 right-6 bg-zinc-950/95 backdrop-blur rounded-3xl border border-white/10 p-5">
-            <div className="flex justify-around mb-4">
+          <div className="absolute -bottom-25 md:left-6 md:right-6 left-3 right-3 bg-zinc-950/95 backdrop-blur rounded-3xl border border-white/10 md:p-5 p-3">
+            <div className="flex justify-between mb-4">
               <div>
                 <p className="text-xs text-zinc-500 uppercase">Based in</p>
                 <p className="text-sm text-zinc-300">Kigali, RW</p>
@@ -88,11 +88,12 @@ const Hero = () => {
                 <p className="text-sm text-primary">Available</p>
               </div>
             </div>
-            <p className=" text-zinc-500 text-sm uppercase mb-6">Core stack</p>
+            <p className=" text-zinc-500 text-sm uppercase mb-5">Core stack</p>
             <div className="flex flex-wrap gap-2">
               {[
                 "React",
                 "Next.js",
+                "React Native",
                 "TypeScript",
                 "Figma",
                 "Tailwind",

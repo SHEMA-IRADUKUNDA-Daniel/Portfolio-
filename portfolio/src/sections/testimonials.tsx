@@ -35,7 +35,7 @@ const Testimonials = () => {
   return (
     <section
       id="Testimonials"
-      className="px-6 md:px-16 py-10 bg-black text-white"
+      className="px-6 md:px-16 pt-5 py-10 bg-black text-white"
     >
       <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
         Testimonials

@@ -66,7 +66,10 @@ const Blogs = () => {
     null,
   );
   return (
-    <section id="Blogs" className="px-6 md:px-16 py-10 bg-black/95 text-white">
+    <section
+      id="Blogs"
+      className="px-6 md:px-16  pt-5 py-10 bg-black/95 text-white"
+    >
       <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
         Thoughts and Writings
       </p>
