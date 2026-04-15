@@ -77,7 +77,7 @@ const Blogs = () => {
         {blogs.map((blog, index) => (
           <article
             key={index}
-            className="rounded-[2rem] border border-white/10 bg-zinc-950 overflow-hidden hover:-translate-y-2 transition duration-300"
+            className="rounded-4xl border border-white/10 bg-zinc-950 overflow-hidden hover:-translate-y-2 transition duration-300"
           >
             <img
               src={blog.image}
@@ -114,7 +114,7 @@ const Blogs = () => {
       </div>
       {selectedBlog && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 px-6">
-          <div className="relative w-full max-w-3xl rounded-[2rem] border border-white/10 bg-zinc-950 p-8">
+          <div className="relative w-full max-w-3xl rounded-4xl border border-white/10 bg-zinc-950 p-8">
             <button
               onClick={() => setSelectedBlog(null)}
               className="absolute bg-primary rounded-full p-2 cursor-pointer -top-6  -right-6 text-white"

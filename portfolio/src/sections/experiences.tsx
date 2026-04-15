@@ -41,7 +41,7 @@ const Experience = () => {
   return (
     <section
       id="Experience"
-      className="px-6 md:px-16 py-28 bg-black text-white"
+      className="px-6 md:px-16 py-10 bg-black text-white"
     >
       <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
         My Journey
@@ -53,7 +53,7 @@ const Experience = () => {
         {experiences.map((job, index) => (
           <div key={index} className="relative pl-12">
             <span
-              className={`absolute -left-[7px] top-2 h-3 w-3 rounded-full ${job.color}`}
+              className={`absolute -left-1.75 top-2 h-3 w-3 rounded-full ${job.color}`}
             />
 
             <p className="text-sm text-zinc-500 mb-3">{job.date}</p>
