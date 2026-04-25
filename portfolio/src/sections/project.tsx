@@ -9,16 +9,17 @@ const projects = [
     description:
       "UI redesign concept of the Equity mobile home screen with a premium dark-mode experience focused on clarity and trust.",
     image: EquitImage,
-    tag: "FRONT-END",
+    tag: "DESIGN",
     accent: "bg-lime-300 text-black",
   },
+
   {
     title: "Canaly Olympia",
     category: "Movie ticket app",
     description:
       "A UI/UX mobile app concept created to simplify movie booking and eliminate long cinema queues.",
     image: MovieImage,
-    tag: "BACK-END",
+    tag: "FRONT-END",
     accent: "bg-violetSecondary text-white",
   },
   {
@@ -27,7 +28,7 @@ const projects = [
     description:
       "A modern redesign concept for digital tax services focused on speed, accessibility, and a cleaner flow.",
     image: RRAImage,
-    tag: "UI DESIGN",
+    tag: "DESIGN",
     accent: "bg-amberThirdly text-black",
   },
 ];
@@ -38,17 +39,17 @@ const Projects = () => {
       id="Projects"
       className="px-6 md:px-16 pt-5 py-10 bg-black/95 text-white"
     >
-      <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
+      <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-8">
         Selected Work
       </p>
 
       <h2 className="text-5xl md:text-6xl font-serif mb-12">Projects</h2>
 
-      <div className="flex gap-4 mb-14">
+      <div className="flex gap-4 mb-10">
         {["All", "Front-end", "Design"].map((filter) => (
           <button
             key={filter}
-            className="px-6 py-3 rounded-2xl border border-white/10 text-zinc-300 hover:border-lime-300/30 transition"
+            className="px-6 py-2 rounded-xl border border-white/10 text-zinc-300 hover:border-lime-300/30 transition"
           >
             {filter}
           </button>
