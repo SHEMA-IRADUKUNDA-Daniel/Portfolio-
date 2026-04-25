@@ -44,10 +44,22 @@ const Contact = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [validationError, setValidationError] = useState(false);
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!form.current || loading) return;
+    const formData = new FormData(form.current);
+
+    const name = formData.get("user_name")?.toString().trim();
+    const email = formData.get("user_email")?.toString().trim();
+    const message = formData.get("message")?.toString().trim();
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email || "");
+    if (!name || !emailValid || !message) {
+      setValidationError(true);
+      setTimeout(() => setValidationError(false), 3000);
+      return;
+    }
     setLoading(true);
     setSuccess(false);
     setError(false);
@@ -165,6 +177,11 @@ const Contact = () => {
 
         {/* RIGHT */}
         <form ref={form} onSubmit={sendEmail} className="space-y-6">
+          {validationError && (
+            <p className="text-red-400 text-sm bg-red-500/10 border border-red-500/30 px-4 py-2 rounded-xl">
+              Please fill in all fields before submitting.
+            </p>
+          )}
           <div className="grid md:grid-cols-2 gap-4">
             <input
               type="text"
