@@ -127,7 +127,13 @@ const Contact = () => {
               <Mail className="text-primary" size={18} />
               <div>
                 <p className="text-sm text-zinc-500">Email</p>
-                <p>danieliradukunda00@gmail.com</p>
+                <a
+                  href="mailto:danieliradukunda00@gmail.com"
+                  className=" hover:text-primary underline  transition "
+                  onClick={() => console.log("clicked")}
+                >
+                  danieliradukunda00@gmail.com
+                </a>
               </div>
             </div>
 
