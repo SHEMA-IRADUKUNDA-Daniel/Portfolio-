@@ -1,5 +1,9 @@
 import { Mail, MapPin, Clock3 } from "lucide-react";
 import type { ContactIconsProps } from "../interface";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { useEffect, useState } from "react";
+
 const GithubIcon: React.FC<ContactIconsProps> = ({ className, onClick }) => (
   <svg
     className={className}
@@ -36,11 +40,60 @@ const XIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!form.current || loading) return;
+    setLoading(true);
+    setSuccess(false);
+    setError(false);
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+      )
+      .then(() => {
+        setSuccess(true);
+
+        form.current?.reset();
+
+        setTimeout(() => setSuccess(false), 3000);
+      })
+      .catch((err) => {
+        console.error(err);
+        setError(true);
+
+        setTimeout(() => setError(false), 3000);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
   return (
     <section
       id="Contact"
       className="px-6 md:px-16 pt-5 py-10 bg-zinc-950 text-white"
     >
+      {success && (
+        <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded">
+          Message sent successfully!
+        </div>
+      )}
+
+      {error && (
+        <div className="fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded">
+          Failed to send message!
+        </div>
+      )}
       <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
         Contact
       </p>
@@ -111,15 +164,18 @@ const Contact = () => {
         </div>
 
         {/* RIGHT */}
-        <form className="space-y-6">
+        <form ref={form} onSubmit={sendEmail} className="space-y-6">
           <div className="grid md:grid-cols-2 gap-4">
             <input
               type="text"
+              name="user_name"
               placeholder="Your name"
               className="rounded-2xl bg-white/10 border border-white/10 px-5 py-4 outline-none"
             />
+
             <input
               type="email"
+              name="user_email"
               placeholder="your@email.com"
               className="rounded-2xl bg-white/10 border border-white/10 px-5 py-4 outline-none"
             />
@@ -127,11 +183,13 @@ const Contact = () => {
 
           <input
             type="text"
+            name="subject"
             placeholder="Subject"
             className="w-full rounded-2xl bg-white/10 border border-white/10 px-5 py-4 outline-none"
           />
 
           <textarea
+            name="message"
             rows={6}
             placeholder="Tell me about your project"
             className="w-full rounded-2xl bg-white/10 border border-white/10 px-5 py-4 outline-none resize-none"
@@ -139,9 +197,14 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="w-full rounded-2xl bg-primary text-black py-4 font-medium hover:opacity-90 transition"
+            disabled={loading}
+            className={`w-full rounded-2xl py-4 font-medium transition cursor-pointer ${
+              loading
+                ? "bg-gray-400 text-white cursor-not-allowed"
+                : "bg-primary text-black hover:text-white"
+            }`}
           >
-            Send message
+            {loading ? "Sending..." : success ? "Message sent" : "Send message"}
           </button>
         </form>
       </div>
