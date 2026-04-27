@@ -2,11 +2,13 @@ const testimonials = [
   {
     name: "Anselme M",
     role: "CEO & Founder, Vanoma",
+    rating: 5,
     feedback:
-      "Daniel consistently delivers clean, scalable interfaces with a strong eye for both usability and design precision. His frontend work always feels intentional and polished.",
+      "Daniel is hardworking, professional, and highly reliable. He constitently showed strong dedicaiton, adaptability, and a willingness to learn. making him a valuable team member.",
   },
   {
     name: "Florence I",
+    rating: 4,
     role: "UI/UX Collaborator",
     feedback:
       "Working with Daniel on product interfaces was seamless. His ability to translate wireframes into refined, responsive interfaces is exceptional.",
@@ -14,18 +16,21 @@ const testimonials = [
   {
     name: "ALX Mentor",
     role: "Frontend Program Mentor",
+    rating: 4,
     feedback:
       "Daniel showed strong growth in component architecture, accessibility, and frontend engineering best practices throughout the program.",
   },
   {
     name: "Vanoma Team",
     role: "Cross-functional Team",
+    rating: 5,
     feedback:
       "A reliable creative problem solver with a strong balance between technical execution and visual communication.",
   },
   {
     name: "Project Client",
     role: "Freelance Collaboration",
+    rating: 4,
     feedback:
       "The final product exceeded expectations. Clean code, elegant UI, and excellent communication throughout the project.",
   },
@@ -49,7 +54,16 @@ const Testimonials = () => {
             key={index}
             className="rounded-4xl border border-white/10 bg-zinc-950 p-6"
           >
-            <div className="mb-5 text-yellow-400">★★★★★</div>
+            <div className="flex gap-1 mb-5">
+              {[...Array(5)].map((_, i) => (
+                <span
+                  key={i}
+                  className={`text-yellow-400 ${i < item.rating ? "text-yellow-400" : "text-zinc-700"}`}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
 
             <p className="text-zinc-300 leading-8 mb-8">{item.feedback}</p>
 
