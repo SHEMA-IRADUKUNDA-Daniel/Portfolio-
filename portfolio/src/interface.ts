@@ -11,3 +11,15 @@ export interface ContactIconsProps {
   className?: string;
   onClick?: () => void;
 }
+
+export type Project = {
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  tag: string[];
+  accent: string[];
+  live?: string;
+  github?: string;
+  figma?: string;
+};
