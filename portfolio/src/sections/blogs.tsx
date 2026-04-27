@@ -1,6 +1,7 @@
-import image1 from "../assets/1.jpeg";
-import image2 from "../assets/2.jpg";
-import image3 from "../assets/3.jpg";
+import image1 from "../assets/Equity.png";
+import image2 from "../assets/Movie.png";
+import image3 from "../assets/MovieDBW.png";
+import image4 from "../assets/hero.jpg";
 import { useState } from "react";
 import { X } from "lucide-react";
 
@@ -29,16 +30,41 @@ less clutter, better decisions.By simplifying the first screen, users can now fo
   },
 
   {
-    title: "Clean architecture for scalable frontend systems",
+    title:
+      "From Design to Development: Building the Canal Olympia Movie Ticket App",
     image: image2,
     category: "Code",
     date: "January 5, 2024",
     accent: "bg-violetSecondary/20 text-violetSecondary",
-    content:
-      "A scalable frontend system starts with clear separation of concerns. I explore how I organize folders, components, hooks, services, and UI primitives to make React applications easier to scale, debug, and maintain in team environments.",
+    content: `
+
+The Canal Olympia movie ticket app started as both a UI/UX concept and a development challenge. The goal was to solve a simple but common frustration: long cinema queues, slow ticket purchasing, and the lack of a smooth mobile-first booking experience.
+
+I wanted to create an app where users could browse movies, check showtimes, reserve seats, and purchase tickets quickly without needing to wait in line at the cinema.
+
+The first step was understanding the user journey. I mapped out the full experience—from opening the app to completing ticket payment. The focus was on speed, clarity, and simplicity. Users should be able to move from discovering a movie to confirming a booking in just a few steps.
+
+I started the design process in Figma by creating wireframes and defining the structure of the main screens: home page, movie details, seat selection, payment flow, and booking confirmation. I focused on creating strong visual hierarchy so users could instantly understand what action to take next.
+
+The interface was designed with a modern cinematic feel—dark backgrounds, strong contrast, bold movie visuals, and clean call-to-action buttons. The goal was to make the app feel premium while still being simple to use.
+
+After finalizing the UI, I moved into development using React Native. This allowed me to transform the design into a real mobile application while maintaining responsiveness across devices. I built reusable components for movie cards, showtime selectors, seat layouts, and booking summaries to keep the codebase clean and scalable.
+
+Navigation was carefully structured to make the booking flow smooth and intuitive. I also paid attention to performance, ensuring the interface remained fast and responsive even with image-heavy movie content.
+
+One of the biggest lessons from this project was balancing visual design with real usability. A beautiful interface is important, but speed and clarity matter even more when users are trying to complete transactions.
+
+This project strengthened both my design thinking and mobile development skills because it required me to move beyond mockups and into real product building.
+
+The final result was more than just a redesign concept—it became a practical solution focused on improving the movie-going experience.
+
+The principle behind the project was simple:
+
+less waiting, faster booking, better experience.
+`,
   },
   {
-    title: "Designing elegant UI systems with Tailwind",
+    title: " Designing maintainable component systems with Tailwind CSSß",
     image: image3,
     category: "Code",
     date: "December 19, 2024",
@@ -47,13 +73,27 @@ less clutter, better decisions.By simplifying the first screen, users can now fo
       "Tailwind CSS allows me to move quickly while maintaining visual consistency. In this post, I explain how I design elegant reusable UI systems with spacing scales, typography rhythm, color tokens, and component composition.",
   },
   {
-    title: "How I structure large React projects professionally",
+    title: "Building Movie Recommendation App",
     image: image3,
     category: "Code",
     date: "April 24, 2025",
     accent: "bg-primary/20 text-primary",
-    content:
-      "Professional React projects require a clear architecture. I share my real folder strategy for sections, reusable UI components, hooks, utilities, assets, and state logic to ensure long-term scalability.",
+    content: `The Movie Recommendation App was built from a simple frustration—spending too much time searching for what to watch instead of actually enjoying a movie.
+
+I noticed how difficult it can be to choose a good film, especially when there are too many options and not enough personalized suggestions. Most platforms focus only on showing popular movies, but they often miss what the user actually wants based on mood, genre, or personal taste.
+
+I designed this app to make movie discovery faster, simpler, and more enjoyable. The goal was to create a clean and engaging experience where users could easily browse movies, explore categories, and receive recommendations that feel more personal.
+
+I started with the UI/UX design process in Figma, focusing on simplicity, strong visual hierarchy, and a cinematic feel. I wanted the interface to feel modern and immersive while keeping navigation easy and intuitive. The layout included featured movies, genre filters, search functionality, and personalized recommendation sections.
+
+After the design phase, I moved into development using React Native to make the experience smooth across mobile devices. I focused on responsive layouts, reusable components, and performance optimization to ensure the app felt fast and polished.
+
+The app was built to help users discover movies based on genres, trending content, and personal preferences, reducing decision fatigue and improving the entertainment experience.
+
+This project helped me strengthen both my design thinking and mobile development skills by combining UI/UX strategy with real product implementation. It showed me how solving a simple everyday problem can lead to building something both useful and enjoyable.
+The principle behind the project was:
+less searching, more watching, better entertainment.
+`,
   },
   {
     title: "Building maintainable component systems",
@@ -66,7 +106,7 @@ less clutter, better decisions.By simplifying the first screen, users can now fo
   },
   {
     title: "Frontend performance tips for production apps",
-    image: image1,
+    image: image4,
     category: "Code",
     date: "October 13, 2024",
     accent: "bg-amberThirdlyt/20 text-amberThirdly",

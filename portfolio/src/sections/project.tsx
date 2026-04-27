@@ -2,7 +2,6 @@ import EquitImage from "../assets/Equity.png";
 import MovieImage from "../assets/Movie.png";
 import RRAImage from "../assets/RRA.png";
 import MovieDBM from "../assets/MovieDBM.png";
-// import { ExternalLink, Github } from "lucide-react";
 import type { Project } from "../interface";
 import { useState } from "react";
 const projects: Project[] = [
