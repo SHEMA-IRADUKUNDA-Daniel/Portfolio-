@@ -67,6 +67,7 @@ const NavBar = () => {
 
           <div className="mt-6">
             <Button
+              href="#Contact"
               text="Get in touch"
               className="w-full px-4 py-3 rounded-full bg-primary text-black font-medium"
             />
