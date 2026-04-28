@@ -23,3 +23,36 @@ export type Project = {
   github?: string;
   figma?: string;
 };
+
+export interface ProjectCardProps {
+  project: {
+    title: string;
+    image: string;
+    category: string;
+    description: string;
+    figma?: string;
+    github?: string;
+    live?: string;
+    tag: string[];
+    accent: string[];
+  };
+}
+export interface BlogCardProps {
+  blog: {
+    title: string;
+    image: string;
+    category: string;
+    date: string;
+    accent: string;
+  };
+  onReadMore: () => void;
+}
+
+export interface TestimonialCardProps {
+  testimonial: {
+    name: string;
+    role: string;
+    feedback: string;
+    rating: number;
+  };
+}
