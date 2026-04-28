@@ -17,26 +17,36 @@ const About = () => {
       {/* left */}
       <div className="relative max-w-md">
         <div className="absolute -inset-3 rounded-4xl border border-primary/10 blur-xl" />
-        <AboutImageComponent />
-        <div className="absolute -bottom-6 -right-6 bg-zinc-950/80 border border-white/10 rounded-3xl px-6 py-4 ">
-          <p className="text-3xl font-light text-primary">3+ yrs</p>
-          <p className="text-sm text-zinc-400">Building digital products</p>
-        </div>
-      </div>
-      {/* right  */}
-      <div>
         <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
           Who I Am
         </p>
         <h2 className="text-5xl md:text-6xl font-serif leading-tight mb-6">
           About <span className="text-primary italic">me</span>
         </h2>
+        <AboutImageComponent />
+        <div className="absolute -bottom-6 -right-6 bg-zinc-950/80 border border-white/10 rounded-3xl px-6 py-4 ">
+          <p className="text-3xl font-light text-primary">2+ yrs</p>
+          <p className="text-sm text-zinc-400">Building digital products</p>
+        </div>
+      </div>
+      {/* right  */}
+      <div>
+        {/* <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
+          Who I Am
+        </p>
+        <h2 className="text-5xl md:text-6xl font-serif leading-tight mb-6">
+          About <span className="text-primary italic">me</span>
+        </h2> */}
 
         <div className="space-y-5 text-zinc-300 leading-8 text-lg max-w-xl">
           <p>
-            I’m a full-stack developer and UI designer focused on building
-            modern digital experiences that feel effortless, scalable, and
-            visually refined.
+            <span className="text-3xl text-primary ">
+              Junior Frontend developer{" "}
+              <span className="text-white text-lg">and</span> UI designer
+            </span>
+            <br />
+            focused on building modern digital experiences that feel effortless,
+            scalable, and visually refined.
           </p>
           <p>
             My strength lies at the intersection of clean engineering and

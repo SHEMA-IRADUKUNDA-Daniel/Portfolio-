@@ -50,14 +50,16 @@ const Hero = () => {
 
           <div className="grid grid-cols-3 gap-8 max-w-lg">
             <div>
-              <p className="text-3xl font-light">12+</p>
+              <p className="text-3xl font-light">4+</p>
               <p className="text-xs text-zinc-500 uppercase mt-2">
                 Projects shipped
               </p>
             </div>
 
             <div>
-              <p className="text-3xl font-light text-primary">3yr</p>
+              <p className="text-3xl font-light text-primary">
+                2yr<span className="text-white">+</span>
+              </p>
               <p className="text-xs text-zinc-500 uppercase mt-2">Experience</p>
             </div>
 
