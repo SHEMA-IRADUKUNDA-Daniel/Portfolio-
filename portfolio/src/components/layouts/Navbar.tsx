@@ -37,7 +37,7 @@ const NavBar = () => {
       <Button
         href="#Contact"
         text="Get in touch"
-        className=" px-4 py-2 rounded-full bg-primary text-black font-medium cursor-pointer hover:bg-primary/20 hover:text-lime-300 transition"
+        className=" px-4 py-2 rounded-full bg-primary text-black font-medium cursor-pointer hover:bg-primary/50 hover:text-white transition"
       />
       <button
         className="md:hidden text-white"
@@ -48,7 +48,10 @@ const NavBar = () => {
       {isOpen && (
         <div className="absolute top-0 left-0 w-full h-full  border border-white/10 bg-zinc-950 p-6 md:hidden z-50">
           <div className="flex justify-end mb-6">
-            <button onClick={() => setIsOpen(false)} className="text-white">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="bg-primary text-white cursor-pointer hover:bg-red-500 p-2 rounded-full transition"
+            >
               <X size={28} />
             </button>
           </div>
@@ -69,7 +72,7 @@ const NavBar = () => {
             <Button
               href="#Contact"
               text="Get in touch"
-              className="w-full px-4 py-3 rounded-full bg-primary text-black font-medium"
+              className=" px-4 py-2 rounded-full bg-primary text-black font-medium cursor-pointer hover:bg-primary/50 hover:text-white transition"
             />
           </div>
         </div>
