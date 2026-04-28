@@ -171,7 +171,7 @@ const Blogs = () => {
       </div>
       {selectedBlog && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-start overflow-y-auto  z-50 px-6 py-10">
-          <div className="relative mx-auto w-full  max-w-3xl max-h-[90vh]   rounded-4xl border border-white/10 bg-zinc-950 p-8">
+          <div className="relative mx-auto w-full  max-w-3xl h-auto   rounded-4xl border border-white/10 bg-zinc-950 p-8">
             <button
               onClick={() => setSelectedBlog(null)}
               className="absolute bg-primary hover:bg-red-500 transition rounded-full p-2 cursor-pointer  -top-5 -right-6 text-white"
