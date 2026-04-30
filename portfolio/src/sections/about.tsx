@@ -25,7 +25,7 @@ const About = () => {
         </h2>
         <AboutImageComponent />
         <div className="absolute -bottom-6 -right-6 bg-zinc-950/80 border border-white/10 rounded-3xl px-6 py-4 ">
-          <p className="text-3xl font-light text-primary">2+ yrs</p>
+          <p className="text-3xl font-light text-primary">3+ yrs</p>
           <p className="text-sm text-zinc-400">Building digital products</p>
         </div>
       </div>
@@ -40,11 +40,6 @@ const About = () => {
 
         <div className="space-y-5 text-zinc-300 leading-8 text-lg max-w-xl">
           <p>
-            <span className="text-3xl text-primary ">
-              Junior Frontend developer{" "}
-              <span className="text-white text-lg">and</span> UI designer
-            </span>
-            <br />
             focused on building modern digital experiences that feel effortless,
             scalable, and visually refined.
           </p>
