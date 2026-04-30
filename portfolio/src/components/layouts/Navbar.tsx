@@ -37,7 +37,7 @@ const NavBar = () => {
       <Button
         href="#Contact"
         text="Get in touch"
-        className=" px-4 py-2 rounded-full bg-primary text-black font-medium cursor-pointer hover:bg-primary/50 hover:text-white transition"
+        className=" px-4 py-2 rounded-full bg-primary text-black font-bold cursor-pointer hover:bg-primary/20 hover:text-primary transition"
       />
       <button
         className="md:hidden text-white"
@@ -72,7 +72,7 @@ const NavBar = () => {
             <Button
               href="#Contact"
               text="Get in touch"
-              className=" px-4 py-2 rounded-full bg-primary text-black font-medium cursor-pointer hover:bg-primary/50 hover:text-white transition"
+              className=" px-4 py-2 rounded-full bg-primary text-black font-bold cursor-pointer hover:bg-primary/50 hover:text-white transition"
             />
           </div>
         </div>

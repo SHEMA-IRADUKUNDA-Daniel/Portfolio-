@@ -2,6 +2,7 @@ import Button from "../components/Button";
 import HeroImageComponent from "../components/HeroImage";
 import NavBar from "../components/layouts/Navbar";
 import myCV from "../assets/myCV..pdf";
+import HeroTyping from "../components/HeroTyping";
 const Hero = () => {
   return (
     <section
@@ -17,9 +18,7 @@ const Hero = () => {
             <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
             <p className="text-zinc-500">Open to opportunities</p>
           </div>
-          <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-6">
-            Front-End Developer • UI Designer
-          </p>
+          <HeroTyping />
 
           <h1 className="text-6xl md:text-7xl font-serif leading-[0.95] mb-8">
             Crafting <span className="text-primary italic">digital</span>
@@ -42,8 +41,8 @@ const Hero = () => {
             <Button
               variant="outline"
               href={myCV}
-              download
-              text="Download CV"
+              target="_blank"
+              text="My Resume"
               className="px-6 py-3 rounded-full border border-white/10 text-zinc-300 cursor-pointer hover:bg-white/10 hover:text-white transition"
             />
           </div>
@@ -58,7 +57,7 @@ const Hero = () => {
 
             <div>
               <p className="text-3xl font-light text-primary">
-                2yr<span className="text-white">+</span>
+                3yr<span className="text-white">+</span>
               </p>
               <p className="text-xs text-zinc-500 uppercase mt-2">Experience</p>
             </div>
@@ -78,20 +77,25 @@ const Hero = () => {
 
           <HeroImageComponent />
 
-          <div className="absolute -bottom-25 md:left-6 md:right-6 left-3 right-3 bg-zinc-950/95 backdrop-blur rounded-3xl border border-white/10 md:p-5 p-3">
+          <div className="absolute -bottom-25 md:left-6 md:right-6 left-3 right-3 bg-zinc-950/80 backdrop-blur rounded-3xl border border-white/10 md:p-5 p-3">
             <div className="flex justify-between mb-4">
-              <div>
+              <div className="flex flex-col gap-1">
                 <p className="text-xs text-zinc-500 uppercase">Based in</p>
                 <p className="text-sm text-zinc-300">Kigali, RW</p>
               </div>
 
-              <div>
-                <p className="text-xs text-zinc-500 uppercase">Status</p>
-                <p className="text-sm text-primary">Available</p>
+              <div className="flex flex-col gap-1">
+                <p className="text-xs text-zinc-500 uppercase text-right">
+                  Status
+                </p>
+                <div className="flex justify-center items-center gap-2">
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                  <p className="text-sm text-primary">Available</p>
+                </div>
               </div>
             </div>
-            <p className=" text-zinc-500 text-sm uppercase mb-5">Core stack</p>
-            <div className="flex flex-wrap gap-2">
+            <p className=" text-zinc-500 text-sm uppercase mb-3">Core stack</p>
+            <div className="flex flex-wrap gap-2 ">
               {[
                 "React",
                 "Next.js",
@@ -103,10 +107,29 @@ const Hero = () => {
                 "Illustrator",
                 "Photoshop",
                 "Git",
-              ].map((item) => (
+              ].map((item, index) => (
                 <span
                   key={item}
-                  className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs"
+                  className="px-4 py-2 rounded-full
+  bg-primary/10
+  border border-primary/20
+  text-primary text-xs font-medium
+  hover:scale-105
+  hover:-translate-y-1
+  hover:bg-primary/20
+  transition-all duration-300
+  cursor-default"
+                  style={{
+                    animation: `
+      fadeUp 0.6s ease forwards,
+      driftX 3s ease-in-out infinite
+    `,
+                    animationDelay: `
+      ${index * 0.15}s,
+      ${index * 0.4}s
+    `,
+                    opacity: 0,
+                  }}
                 >
                   {item}
                 </span>
