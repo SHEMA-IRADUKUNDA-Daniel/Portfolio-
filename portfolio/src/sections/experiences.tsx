@@ -1,3 +1,9 @@
+"use client";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import type { Variants } from "framer-motion";
+
 const experiences = [
   {
     date: "June 2025 - Oct 2025",
@@ -38,6 +44,37 @@ const experiences = [
 ];
 
 const Experience = () => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const item: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const child: Variants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
+  };
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   return (
     <section
       id="Experience"
@@ -49,35 +86,82 @@ const Experience = () => {
 
       <h2 className="text-5xl md:text-6xl font-serif mb-16">Experience</h2>
 
-      <div className="relative border-l border-white/10 ml-3 space-y-14">
-        {experiences.map((job, index) => (
-          <div key={index} className="relative pl-12">
-            <span
-              className={`absolute -left-1.75 top-2 h-3 w-3 rounded-full ${job.color}`}
-            />
+      <div ref={ref} className="relative ml-3">
+        <motion.div className="absolute left-0 top-0 w-px bg-white/10" />
+        <motion.div
+          style={{ height }}
+          className="absolute left-0 top-0 w-px bg-white"
+        />
+        <motion.div
+          className="space-y-14"
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {experiences.map((job, index) => (
+            <motion.div
+              key={index}
+              className="relative pl-12 "
+              variants={item}
+              whileHover={{ x: 6 }}
+              transition={{ type: "spring", stiffness: 200 }}
+            >
+              <motion.span
+                className={`absolute -left-1.75 top-2 h-3 w-3 rounded-full ${job.color}`}
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  delay: index * 0.15,
+                }}
+              />
 
-            <p className="text-sm text-zinc-500 mb-3">{job.date}</p>
-
-            <h3 className="text-3xl font-semibold mb-3">{job.title}</h3>
-
-            <p className="text-zinc-400 mb-4">{job.company}</p>
-
-            <p className="text-zinc-500 leading-8 max-w-4xl mb-5">
-              {job.description}
-            </p>
-
-            <div className="flex flex-wrap gap-3">
-              {job.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-4 py-2 rounded-full border border-white/10 text-sm text-zinc-400"
+              <motion.div variants={container}>
+                <motion.p
+                  className="text-sm text-zinc-500 mb-3"
+                  variants={child}
                 >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+                  {job.date}
+                </motion.p>
+
+                <motion.h3
+                  className="text-3xl font-semibold mb-3"
+                  variants={child}
+                >
+                  {job.title}
+                </motion.h3>
+
+                <motion.p className="text-zinc-400 mb-4" variants={child}>
+                  {job.company}
+                </motion.p>
+
+                <motion.p
+                  className="text-zinc-500 leading-8 max-w-4xl mb-5"
+                  variants={child}
+                >
+                  {job.description}
+                </motion.p>
+              </motion.div>
+
+              <motion.div className="flex flex-wrap gap-3" variants={child}>
+                {job.stack.map((tech) => (
+                  <motion.span
+                    key={tech}
+                    className="px-4 py-2 rounded-full border border-white/10 text-sm text-zinc-400"
+                    whileHover={{
+                      y: -3,
+                      backgroundColor: "rgba(255,255,255,0.05)",
+                    }}
+                  >
+                    {tech}
+                  </motion.span>
+                ))}
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
