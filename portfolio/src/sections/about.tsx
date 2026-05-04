@@ -12,7 +12,7 @@ const About = () => {
   return (
     <section
       id="About"
-      className=" px-6 md:px-16 pt-5 pb-10 bg-black/90 text-white grid lg:grid-cols-2 gap-14 items-center"
+      className=" px-6 md:px-16 pt-5 pb-10 bg-black/95 text-white grid lg:grid-cols-2 gap-14 items-center"
     >
       {/* left */}
       <div className="relative max-w-md">

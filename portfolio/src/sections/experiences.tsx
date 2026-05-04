@@ -3,6 +3,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import type { Variants } from "framer-motion";
+import andelaImage from "../assets/andela.svg";
+import alxImage from "../assets/alx.png";
+import vanomaImage from "../assets/vanoma.svg";
+import panavisImage from "../assets/panavis.png";
 
 const experiences = [
   {
@@ -12,7 +16,8 @@ const experiences = [
     description:
       "Successfully completed the ALX ProDev Front-End program, strengthening technical and professional skills through projects, coding challenges, and simulations while building responsive, dynamic web interfaces.",
     stack: ["Next.js", "React.js", "React Native", "TypeScript", "Tailwind"],
-    color: "bg-primary",
+    bg: "bg-white",
+    logo: alxImage,
   },
   {
     date: "May 2023 - Aug 2023",
@@ -21,7 +26,8 @@ const experiences = [
     description:
       "Completed intensive frontend training using HTML, CSS and JavaScript, collaborating on real-world style projects while strengthening clean code practices and UI/UX fundamentals.",
     stack: ["HTML", "CSS", "JavaScript", "Figma", "Git", "GitHub"],
-    color: "bg-violetSecondary",
+    bg: "bg-white",
+    logo: andelaImage,
   },
   {
     date: "Oct 2021 - Nov 2022",
@@ -30,7 +36,8 @@ const experiences = [
     description:
       "Conducted manual testing for delivery, rider, and staff applications while also creating promotional assets aligned with company branding and user experience improvements.",
     stack: ["Browser DevTools", "Illustrator", "Photoshop"],
-    color: "bg-amberThirdly",
+    bg: "bg-white",
+    logo: vanomaImage,
   },
   {
     date: "Oct 2021 - Nov 2022",
@@ -39,7 +46,8 @@ const experiences = [
     description:
       "Designed promotional materials and digital content across platforms while ensuring visuals aligned with company branding and communication goals.",
     stack: ["Illustrator", "Photoshop", "Branding"],
-    color: "bg-primary",
+    bg: "bg-[#8B3C4E]",
+    logo: panavisImage,
   },
 ];
 
@@ -86,14 +94,14 @@ const Experience = () => {
 
       <h2 className="text-5xl md:text-6xl font-serif mb-16">Experience</h2>
 
-      <div ref={ref} className="relative ml-3">
+      <div ref={ref} className="relative ml-6">
         <motion.div className="absolute left-0 top-0 w-px bg-white/10" />
         <motion.div
           style={{ height }}
           className="absolute left-0 top-0 w-px bg-white"
         />
         <motion.div
-          className="space-y-14"
+          className="space-y-20"
           variants={container}
           initial="hidden"
           whileInView="visible"
@@ -102,21 +110,30 @@ const Experience = () => {
           {experiences.map((job, index) => (
             <motion.div
               key={index}
-              className="relative pl-12 "
+              className="relative pl-14 "
               variants={item}
               whileHover={{ x: 6 }}
               transition={{ type: "spring", stiffness: 200 }}
             >
-              <motion.span
-                className={`absolute -left-1.75 top-2 h-3 w-3 rounded-full ${job.color}`}
+              <motion.div
+                className={`absolute  left-0 top-2 -translate-x-1/2 h-12 w-12 rounded-full flex items-center justify-center
+                border border-white/10 ${job.bg}
+                shadow-[0_0_20px_rgba(255,255,255,0.08)]`}
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
+                whileHover={{ scale: 1.1 }}
                 transition={{
                   type: "spring",
                   stiffness: 200,
                   delay: index * 0.15,
                 }}
-              />
+              >
+                <img
+                  src={job.logo}
+                  alt={job.company}
+                  className="w-8 h-8  object-contain"
+                />
+              </motion.div>
 
               <motion.div variants={container}>
                 <motion.p
