@@ -98,7 +98,7 @@ const Experience = () => {
         <motion.div className="absolute left-0 top-0 w-px bg-white/10" />
         <motion.div
           style={{ height }}
-          className="absolute left-0 top-0 w-px bg-white"
+          className="absolute left-0 top-0 w-px bg-primary"
         />
         <motion.div
           className="space-y-20"
