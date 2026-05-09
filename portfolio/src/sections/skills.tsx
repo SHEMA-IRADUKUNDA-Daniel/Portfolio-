@@ -59,7 +59,8 @@ const Skills = () => {
           Technical Expertise
         </p>
         <h2 className="text-5xl md:text-6xl font-serif leading-tight">
-          Skills that <span className="text-primary italic">scale.</span>
+          Skills <span className="text-primary italic">that</span>{" "}
+          <span className="text-zinc-500 italic">scale.</span>
         </h2>
         <p className="text-zinc-400 mt-6 leading-7">
           A combination of engineering, design, and product thinking — focused

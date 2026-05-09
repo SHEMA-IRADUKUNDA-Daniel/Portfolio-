@@ -99,7 +99,8 @@ const Projects = () => {
       </p>
 
       <h2 className="text-5xl md:text-6xl font-serif mb-12">
-        Projects that <span className="text-primary italic">build impact.</span>
+        Projects <span className="text-primary italic">that</span>{" "}
+        <span className="text-zinc-500 italic">build impact.</span>
       </h2>
 
       <div className="flex gap-3 flex-wrap mb-10 ">
