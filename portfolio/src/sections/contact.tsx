@@ -111,7 +111,8 @@ const Contact = () => {
       </p>
 
       <h2 className="text-5xl md:text-6xl font-serif mb-16">
-        Let’s work <span className="text-primary">together</span>
+        Let’s <span className="text-primary italic">work</span>{" "}
+        <span className="text-zinc-500 italic">together</span>
       </h2>
 
       <div className="grid lg:grid-cols-2 gap-16">
