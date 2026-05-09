@@ -12,7 +12,6 @@ const Hero = () => {
       <NavBar />
 
       <div className="grid lg:grid-cols-2 gap-16 items-center">
-        {/* left */}
         <div>
           <div className="flex items-center content-center gap-3 mb-4">
             <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />

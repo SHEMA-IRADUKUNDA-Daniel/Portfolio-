@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from "framer-motion";
 import EquitImage from "../assets/Equity.png";
 import MovieImage from "../assets/Movie.png";
 import RRAImage from "../assets/RRA.png";
@@ -5,6 +6,7 @@ import MovieDBM from "../assets/MovieDBM.png";
 import type { Project } from "../interface";
 import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
+import type { Variants } from "framer-motion";
 const projects: Project[] = [
   {
     title: "Equity",
@@ -24,7 +26,7 @@ const projects: Project[] = [
     description:
       "A UI/UX mobile app concept created to simplify movie booking and eliminate long cinema queues.",
     image: MovieImage,
-    tag: ["FRONT-END"],
+    tag: ["FRONTEND"],
     accent: ["bg-violetSecondary text-white"],
     github:
       "https://github.com/SHEMA-IRADUKUNDA-Daniel/CanalOlympia-ticket-app",
@@ -48,7 +50,7 @@ const projects: Project[] = [
     description:
       "A modern movie discovery and recommendation platform designed to help users explore trending films, view details, and find what to watch next with ease.",
     image: MovieDBM,
-    tag: ["DESIGN", "FRONT-END"],
+    tag: ["DESIGN", "FRONTEND"],
     accent: ["bg-violetSecondary text-white", "bg-primary text-black"],
     figma:
       "https://www.figma.com/design/3nRBsjoXXmj9rtZ4ltoVKE/RRA?t=NNGj3op7MQi29Z79-0",
@@ -60,6 +62,7 @@ const projects: Project[] = [
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
+  const filters = ["All", "Frontend", "Design"];
   const filteredProjects =
     activeFilter === "All"
       ? projects
@@ -68,29 +71,46 @@ const Projects = () => {
         );
   const filterColors: Record<string, string> = {
     All: "border-primary text-white",
-    "Front-end": "border-violetSecondary text-white",
+    Frontend: "border-violetSecondary text-white",
     Design: "border-amberThirdly text-white",
+  };
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+  const item: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+    },
   };
   return (
     <section
       id="Projects"
-      className="px-6 md:px-16 pt-5 py-10 bg-black/95 text-white"
+      className="px-6 md:px-16 pt-5 py-10 bg-black/98 text-white"
     >
       <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-8">
         Selected Work
       </p>
 
-      <h2 className="text-5xl md:text-6xl font-serif mb-12">Projects</h2>
+      <h2 className="text-5xl md:text-6xl font-serif mb-12">
+        Projects that <span className="text-primary italic">build impact.</span>
+      </h2>
 
-      <div className="flex gap-4 mb-10">
-        {["All", "Front-end", "Design"].map((filter) => (
+      <div className="flex gap-3 flex-wrap mb-10 ">
+        {filters.map((filter) => (
           <button
             onClick={() => setActiveFilter(filter)}
             key={filter}
-            className={`px-6 py-2 cursor-pointer rounded-xl border transition ${
+            className={`px-5 py-2 cursor-pointer rounded-xl border transition-all duration-300 scale-105 ${
               activeFilter === filter
                 ? filterColors[filter]
-                : "border-white/10 text-zinc-300 hover:border-white/20 hover:text-white"
+                : "border-white/10 text-zinc-300 hover:border-white hover:text-white/20"
             }`}
           >
             {filter}
@@ -98,11 +118,25 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProjects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
-        ))}
-      </div>
+      <motion.div
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
+        <AnimatePresence mode="popLayout">
+          {filteredProjects.map((project) => (
+            <motion.div
+              key={project.title}
+              variants={item}
+              layout
+              exit={{ opacity: 0, scale: 0.95 }}
+            >
+              <ProjectCard key={project.title} project={project} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
 };
