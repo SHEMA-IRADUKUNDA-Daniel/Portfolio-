@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
+
 const Skills = () => {
   const skillGroups = [
     {
@@ -31,33 +34,72 @@ const Skills = () => {
       skills: ["Figma", "Git", "Vercel", "Illustrator", "Photoshop"],
     },
   ];
-  return (
-    <div id="Skills" className="px-6 md:px-16 py-20 pb-10 bg-black text-white">
-      <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
-        What I Work With
-      </p>
-      <h2 className="text-5xl md:text-6xl font-serif leading-tight mb-14">
-        Skills that <span className="text-primary italic">scale.</span>
-      </h2>
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
 
-      <div className="grid md:grid-cols-3 gap-8 ">
+  const item: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
+    },
+  };
+  return (
+    <section id="Skills" className="px-6 md:px-16 py-10  bg-black text-white">
+      <div className="mb-16 max-w-2xl">
+        <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
+          Technical Expertise
+        </p>
+        <h2 className="text-5xl md:text-6xl font-serif leading-tight">
+          Skills that <span className="text-primary italic">scale.</span>
+        </h2>
+        <p className="text-zinc-400 mt-6 leading-7">
+          A combination of engineering, design, and product thinking — focused
+          on building real-world, scalable digital experiences.
+        </p>
+      </div>
+
+      <motion.div
+        className="grid md:grid-cols-3 gap-8"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {skillGroups.map((group) => (
-          <div
+          <motion.div
             key={group.title}
-            className={`rounded-4xl border border-white/10 bg-zinc-950/80 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-white/20 ${group.glow} ${
+            variants={item}
+            whileHover={{
+              y: -12,
+              scale: 1.02,
+              transition: { duration: 0.25 },
+            }}
+            className={`relative rounded-3xl border border-white/10 bg-black p-8 transition-all duration-300  hover:border-white/20 ${group.glow} ${
               group.featured ? "md:-mt-6" : ""
             }`}
           >
+            <div className="absolute inset-0 rounded-3xl opacity-0 hover:opacity-100 transition duration-500 pointer-events-none">
+              <div className={`absolute -inset-1 blur-2xl ${group.glow}`} />
+            </div>
             <h3 className="text-2xl font-semibold mb-2">{group.title}</h3>
             <p className="text-zinc-400 text-sm mb-8 leading-6">
               {group.subtitle}
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-wrap gap-3 mb-8 ">
               {group.skills.map((skill) => (
                 <span
                   key={skill}
-                  className={`px-4 py-2 rounded-full text-sm border border-white/10 bg-white/5 ${group.accent} hover:scale-105 transition`}
+                  className={`px-3 py-1.5 rounded-full text-sm border border-white/10 bg-white/5 ${group.accent} hover:scale-110 transition-all duration-200 cursor-default `}
                 >
                   {skill}
                 </span>
@@ -77,10 +119,10 @@ const Skills = () => {
                   "UX Thinking • Visual Design • Product Systems"}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 };
 
