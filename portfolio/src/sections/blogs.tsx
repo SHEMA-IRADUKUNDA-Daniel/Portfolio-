@@ -119,53 +119,55 @@ const Blogs = () => {
       id="Blogs"
       className="px-6 md:px-16  pt-5 py-10 bg-black/95 text-white"
     >
-      <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
-        Thoughts and Writings
-      </p>
+      <div className="max-w-screen-2xl mx-auto">
+        <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
+          Thoughts and Writings
+        </p>
 
-      <h2 className="text-5xl md:text-6xl font-serif mb-16">Blogs</h2>
+        <h2 className="text-5xl md:text-6xl font-serif mb-16">Blogs</h2>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogs.map((blog, index) => (
-          <BlogCard
-            key={index}
-            blog={blog}
-            onReadMore={() => setSelectedBlog(blog)}
-          />
-        ))}
-      </div>
-      {selectedBlog && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-start overflow-y-auto  z-50 px-6 py-10">
-          <div className="relative mx-auto w-full  max-w-3xl h-auto   rounded-4xl border border-white/10 bg-zinc-950 p-8">
-            <button
-              onClick={() => setSelectedBlog(null)}
-              className="absolute bg-primary hover:bg-red-500 transition rounded-full p-2 cursor-pointer  -top-5 -right-6 text-white"
-            >
-              <X size={28} />
-            </button>
-
-            <img
-              src={selectedBlog.image}
-              alt={selectedBlog.title}
-              className="w-full h-auto object-cover object-top rounded-3xl mb-6"
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogs.map((blog, index) => (
+            <BlogCard
+              key={index}
+              blog={blog}
+              onReadMore={() => setSelectedBlog(blog)}
             />
-
-            <span
-              className={`px-4 py-1 rounded-full text-xs font-medium ${selectedBlog.accent}`}
-            >
-              {selectedBlog.category}
-            </span>
-
-            <h3 className="text-3xl font-semibold mt-6 mb-4">
-              {selectedBlog.title}
-            </h3>
-
-            <p className="text-sm text-zinc-500 mb-6">{selectedBlog.date}</p>
-
-            <p className="text-zinc-400 leading-8">{selectedBlog.content}</p>
-          </div>
+          ))}
         </div>
-      )}
+        {selectedBlog && (
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-start overflow-y-auto  z-50 px-6 py-10">
+            <div className="relative mx-auto w-full  max-w-3xl h-auto   rounded-4xl border border-white/10 bg-zinc-950 p-8">
+              <button
+                onClick={() => setSelectedBlog(null)}
+                className="absolute bg-primary hover:bg-red-500 transition rounded-full p-2 cursor-pointer  -top-5 -right-6 text-white"
+              >
+                <X size={28} />
+              </button>
+
+              <img
+                src={selectedBlog.image}
+                alt={selectedBlog.title}
+                className="w-full h-auto object-cover object-top rounded-3xl mb-6"
+              />
+
+              <span
+                className={`px-4 py-1 rounded-full text-xs font-medium ${selectedBlog.accent}`}
+              >
+                {selectedBlog.category}
+              </span>
+
+              <h3 className="text-3xl font-semibold mt-6 mb-4">
+                {selectedBlog.title}
+              </h3>
+
+              <p className="text-sm text-zinc-500 mb-6">{selectedBlog.date}</p>
+
+              <p className="text-zinc-400 leading-8">{selectedBlog.content}</p>
+            </div>
+          </div>
+        )}
+      </div>
     </section>
   );
 };

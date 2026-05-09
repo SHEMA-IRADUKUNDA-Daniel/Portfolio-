@@ -95,142 +95,148 @@ const Contact = () => {
       id="Contact"
       className="px-6 md:px-16 pt-5 py-10 bg-zinc-950 text-white"
     >
-      {success && (
-        <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded">
-          Message sent successfully!
-        </div>
-      )}
-
-      {error && (
-        <div className="fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded">
-          Failed to send message!
-        </div>
-      )}
-      <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
-        Contact
-      </p>
-
-      <h2 className="text-5xl md:text-6xl font-serif mb-16">
-        Let’s <span className="text-primary italic">work</span>{" "}
-        <span className="text-zinc-500 italic">together</span>
-      </h2>
-
-      <div className="grid lg:grid-cols-2 gap-16">
-        {/* LEFT */}
-        <div>
-          <p className="text-zinc-400 leading-8 max-w-md mb-10">
-            Have a project in mind? I’d love to hear about it. Send a message
-            and I’ll get back to you within 24 hours.
-          </p>
-
-          <div className="space-y-6">
-            <div className="flex items-center gap-4">
-              <Mail className="text-primary" size={18} />
-              <div>
-                <p className="text-sm text-zinc-500">Email</p>
-                <a
-                  href="mailto:danieliradukunda00@gmail.com"
-                  className=" hover:text-primary underline  transition "
-                  onClick={() => console.log("clicked")}
-                >
-                  danieliradukunda00@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <MapPin className="text-primary" size={18} />
-              <div>
-                <p className="text-sm text-zinc-500">Location</p>
-                <p>Kigali, Rwanda</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <Clock3 className="text-primary" size={18} />
-              <div>
-                <p className="text-sm text-zinc-500">Availability</p>
-                <p>Open to freelance & full-time</p>
-              </div>
-            </div>
+      <div className="max-w-screen-2xl mx-auto">
+        {success && (
+          <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded">
+            Message sent successfully!
           </div>
+        )}
 
-          <div className="flex gap-5 mt-10 self-center">
-            <a
-              href="https://github.com/SHEMA-IRADUKUNDA-Daniel/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GithubIcon className="w-6 h-6 text-primary cursor-pointer hover:text-white hover:scale-110 transition-all" />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/shema-iradukunda-daniel/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkedinIcon className="w-6 h-6 text-primary cursor-pointer hover:text-white hover:scale-110 transition-all" />
-            </a>
-
-            <a
-              href="https://x.com/danieliradukun6"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <XIcon className="w-6 h-6 text-primary cursor-pointer hover:text-white hover:scale-110 transition-all" />
-            </a>
+        {error && (
+          <div className="fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded">
+            Failed to send message!
           </div>
-        </div>
+        )}
+        <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
+          Contact
+        </p>
 
-        {/* RIGHT */}
-        <form ref={form} onSubmit={sendEmail} className="space-y-6">
-          {validationError && (
-            <p className="text-red-400 text-sm bg-red-500/10 border border-red-500/30 px-4 py-2 rounded-xl">
-              Please fill in all fields before submitting.
+        <h2 className="text-5xl md:text-6xl font-serif mb-16">
+          Let’s <span className="text-primary italic">work</span>{" "}
+          <span className="text-zinc-500 italic">together</span>
+        </h2>
+
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* LEFT */}
+          <div>
+            <p className="text-zinc-400 leading-8 max-w-md mb-10">
+              Have a project in mind? I’d love to hear about it. Send a message
+              and I’ll get back to you within 24 hours.
             </p>
-          )}
-          <div className="grid md:grid-cols-2 gap-4">
+
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <Mail className="text-primary" size={18} />
+                <div>
+                  <p className="text-sm text-zinc-500">Email</p>
+                  <a
+                    href="mailto:danieliradukunda00@gmail.com"
+                    className=" hover:text-primary underline  transition "
+                    onClick={() => console.log("clicked")}
+                  >
+                    danieliradukunda00@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <MapPin className="text-primary" size={18} />
+                <div>
+                  <p className="text-sm text-zinc-500">Location</p>
+                  <p>Kigali, Rwanda</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <Clock3 className="text-primary" size={18} />
+                <div>
+                  <p className="text-sm text-zinc-500">Availability</p>
+                  <p>Open to freelance & full-time</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex gap-5 mt-10 self-center">
+              <a
+                href="https://github.com/SHEMA-IRADUKUNDA-Daniel/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GithubIcon className="w-6 h-6 text-primary cursor-pointer hover:text-white hover:scale-110 transition-all" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/shema-iradukunda-daniel/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedinIcon className="w-6 h-6 text-primary cursor-pointer hover:text-white hover:scale-110 transition-all" />
+              </a>
+
+              <a
+                href="https://x.com/danieliradukun6"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <XIcon className="w-6 h-6 text-primary cursor-pointer hover:text-white hover:scale-110 transition-all" />
+              </a>
+            </div>
+          </div>
+
+          {/* RIGHT */}
+          <form ref={form} onSubmit={sendEmail} className="space-y-6">
+            {validationError && (
+              <p className="text-red-400 text-sm bg-red-500/10 border border-red-500/30 px-4 py-2 rounded-xl">
+                Please fill in all fields before submitting.
+              </p>
+            )}
+            <div className="grid md:grid-cols-2 gap-4">
+              <input
+                type="text"
+                name="user_name"
+                placeholder="Your name"
+                className="rounded-2xl bg-white/10 border border-white/10 px-5 py-4 outline-none"
+              />
+
+              <input
+                type="email"
+                name="user_email"
+                placeholder="your@email.com"
+                className="rounded-2xl bg-white/10 border border-white/10 px-5 py-4 outline-none"
+              />
+            </div>
+
             <input
               type="text"
-              name="user_name"
-              placeholder="Your name"
-              className="rounded-2xl bg-white/10 border border-white/10 px-5 py-4 outline-none"
+              name="subject"
+              placeholder="Subject"
+              className="w-full rounded-2xl bg-white/10 border border-white/10 px-5 py-4 outline-none"
             />
 
-            <input
-              type="email"
-              name="user_email"
-              placeholder="your@email.com"
-              className="rounded-2xl bg-white/10 border border-white/10 px-5 py-4 outline-none"
+            <textarea
+              name="message"
+              rows={6}
+              placeholder="Tell me about your project"
+              className="w-full rounded-2xl bg-white/10 border border-white/10 px-5 py-4 outline-none resize-none"
             />
-          </div>
 
-          <input
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            className="w-full rounded-2xl bg-white/10 border border-white/10 px-5 py-4 outline-none"
-          />
-
-          <textarea
-            name="message"
-            rows={6}
-            placeholder="Tell me about your project"
-            className="w-full rounded-2xl bg-white/10 border border-white/10 px-5 py-4 outline-none resize-none"
-          />
-
-          <button
-            type="submit"
-            disabled={loading}
-            className={`w-full rounded-2xl py-4 font-medium transition cursor-pointer ${
-              loading
-                ? "bg-gray-400 text-white cursor-not-allowed"
-                : "bg-primary text-black hover:text-white"
-            }`}
-          >
-            {loading ? "Sending..." : success ? "Message sent" : "Send message"}
-          </button>
-        </form>
+            <button
+              type="submit"
+              disabled={loading}
+              className={`w-full rounded-2xl py-4 font-medium transition cursor-pointer ${
+                loading
+                  ? "bg-gray-400 text-white cursor-not-allowed"
+                  : "bg-primary text-black hover:text-white"
+              }`}
+            >
+              {loading
+                ? "Sending..."
+                : success
+                  ? "Message sent"
+                  : "Send message"}
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );

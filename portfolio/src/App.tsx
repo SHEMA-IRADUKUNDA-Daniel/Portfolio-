@@ -13,10 +13,10 @@ function App() {
     <main>
       <MouseGlow />
       <Hero />
-      <About />
       <Skills />
       <Projects />
       <Experience />
+      <About />
       <Blogs />
       <Testimonials />
       <Contact />

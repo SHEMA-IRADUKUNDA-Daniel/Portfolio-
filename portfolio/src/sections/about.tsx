@@ -67,9 +67,9 @@ const About = () => {
   return (
     <section
       id="About"
-      className=" px-6 md:px-16 pt-5 pb-10 bg-black/98 text-white  overflow-hidden"
+      className=" px-6 md:px-16 pt-5 pb-10 bg-black text-white  overflow-hidden"
     >
-      <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="grid lg:grid-cols-2 gap-20 items-center max-w-screen-2xl mx-auto">
         <div className="relative h-175 flex items-center justify-center">
           {floatingCards.map((card, index) => (
             <motion.div
