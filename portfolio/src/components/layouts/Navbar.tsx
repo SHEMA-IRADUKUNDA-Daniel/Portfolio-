@@ -16,7 +16,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="flex flex-wrap max-w-screen-2xl items-center justify-between mb-20">
+    <nav className="flex flex-wrap max-w-screen-2xl mx-auto items-center justify-between mb-20">
       <div className=" text-white text-2xl font-serif ">
         D<span className="text-primary">S.</span>
       </div>
