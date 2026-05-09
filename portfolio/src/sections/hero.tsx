@@ -11,7 +11,7 @@ const Hero = () => {
     >
       <NavBar />
 
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="grid lg:grid-cols-2 max-w-screen-2xl mx-auto gap-16 items-center">
         <div>
           <div className="flex items-center content-center gap-3 mb-4">
             <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />

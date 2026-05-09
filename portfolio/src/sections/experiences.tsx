@@ -86,99 +86,101 @@ const Experience = () => {
   return (
     <section
       id="Experience"
-      className="px-6 md:px-16 pt-5 py-10 bg-black text-white"
+      className="px-6 md:px-16 pt-5 py-10 bg-black/98 text-white"
     >
-      <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
-        My Journey
-      </p>
+      <div className="max-w-screen-2xl mx-auto">
+        <p className="text-xs tracking-[0.25em] text-zinc-500 uppercase mb-4">
+          My Journey
+        </p>
 
-      <h2 className="text-5xl md:text-6xl font-serif mb-16">Experience</h2>
+        <h2 className="text-5xl md:text-6xl font-serif mb-16">Experience</h2>
 
-      <div ref={ref} className="relative ml-6">
-        <motion.div className="absolute left-0 top-0 w-px bg-white/10" />
-        <motion.div
-          style={{ height }}
-          className="absolute left-0 top-0 w-px bg-primary"
-        />
-        <motion.div
-          className="space-y-20"
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {experiences.map((job, index) => (
-            <motion.div
-              key={index}
-              className="relative pl-14 "
-              variants={item}
-              whileHover={{ x: 6 }}
-              transition={{ type: "spring", stiffness: 200 }}
-            >
+        <div ref={ref} className="relative ml-6">
+          <motion.div className="absolute left-0 top-0 w-px bg-white/10" />
+          <motion.div
+            style={{ height }}
+            className="absolute left-0 top-0 w-px bg-primary"
+          />
+          <motion.div
+            className="space-y-20"
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {experiences.map((job, index) => (
               <motion.div
-                className={`absolute  left-0 top-2 -translate-x-1/2 h-12 w-12 rounded-full flex items-center justify-center
+                key={index}
+                className="relative pl-14 "
+                variants={item}
+                whileHover={{ x: 6 }}
+                transition={{ type: "spring", stiffness: 200 }}
+              >
+                <motion.div
+                  className={`absolute  left-0 top-2 -translate-x-1/2 h-12 w-12 rounded-full flex items-center justify-center
                 border border-white/10 ${job.bg}
                 shadow-[0_0_20px_rgba(255,255,255,0.08)]`}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                whileHover={{ scale: 1.1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 200,
-                  delay: index * 0.15,
-                }}
-              >
-                <img
-                  src={job.logo}
-                  alt={job.company}
-                  className="w-8 h-8  object-contain"
-                />
-              </motion.div>
-
-              <motion.div variants={container}>
-                <motion.p
-                  className="text-sm text-zinc-500 mb-3"
-                  variants={child}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    delay: index * 0.15,
+                  }}
                 >
-                  {job.date}
-                </motion.p>
+                  <img
+                    src={job.logo}
+                    alt={job.company}
+                    className="w-8 h-8  object-contain"
+                  />
+                </motion.div>
 
-                <motion.h3
-                  className="text-3xl font-semibold mb-3"
-                  variants={child}
-                >
-                  {job.title}
-                </motion.h3>
-
-                <motion.p className="text-zinc-400 mb-4" variants={child}>
-                  {job.company}
-                </motion.p>
-
-                <motion.p
-                  className="text-zinc-500 leading-8 max-w-4xl mb-5"
-                  variants={child}
-                >
-                  {job.description}
-                </motion.p>
-              </motion.div>
-
-              <motion.div className="flex flex-wrap gap-3" variants={child}>
-                {job.stack.map((tech) => (
-                  <motion.span
-                    key={tech}
-                    className="px-4 py-2 rounded-full border border-white/10 text-sm text-zinc-400"
-                    whileHover={{
-                      y: -3,
-                      backgroundColor: "rgba(255,255,255,0.05)",
-                    }}
+                <motion.div variants={container}>
+                  <motion.p
+                    className="text-sm text-zinc-500 mb-3"
+                    variants={child}
                   >
-                    {tech}
-                  </motion.span>
-                ))}
+                    {job.date}
+                  </motion.p>
+
+                  <motion.h3
+                    className="text-3xl font-semibold mb-3"
+                    variants={child}
+                  >
+                    {job.title}
+                  </motion.h3>
+
+                  <motion.p className="text-zinc-400 mb-4" variants={child}>
+                    {job.company}
+                  </motion.p>
+
+                  <motion.p
+                    className="text-zinc-500 leading-8 max-w-4xl mb-5"
+                    variants={child}
+                  >
+                    {job.description}
+                  </motion.p>
+                </motion.div>
+
+                <motion.div className="flex flex-wrap gap-3" variants={child}>
+                  {job.stack.map((tech) => (
+                    <motion.span
+                      key={tech}
+                      className="px-4 py-2 rounded-full border border-white/10 text-sm text-zinc-400"
+                      whileHover={{
+                        y: -3,
+                        backgroundColor: "rgba(255,255,255,0.05)",
+                      }}
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
