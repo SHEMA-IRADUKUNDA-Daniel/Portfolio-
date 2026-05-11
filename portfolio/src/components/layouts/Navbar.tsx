@@ -12,7 +12,6 @@ const NavBar = () => {
     { label: "Experience", href: "#Experience" },
     { label: "Blogs", href: "#Blogs" },
     { label: "Testimonials", href: "#Testimonials" },
-    { label: "Contact", href: "#Contact" },
   ];
 
   return (
