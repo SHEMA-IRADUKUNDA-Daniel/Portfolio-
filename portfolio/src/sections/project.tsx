@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import EquitImage from "../assets/Equity.png";
 import MovieImage from "../assets/Movie.png";
 import RRAImage from "../assets/RRA.png";
-import MovieDBM from "../assets/MovieDBw.png";
+import MovieDBM from "../assets/MovieDBW.png";
 import TransportImage from "../assets/ecofleet.png";
 import type { Project } from "../interface";
 import { useState } from "react";
