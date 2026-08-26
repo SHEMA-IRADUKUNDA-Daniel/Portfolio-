@@ -2,12 +2,38 @@ import { motion, AnimatePresence } from "framer-motion";
 import EquitImage from "../assets/Equity.png";
 import MovieImage from "../assets/Movie.png";
 import RRAImage from "../assets/RRA.png";
-import MovieDBM from "../assets/MovieDBM.png";
+import MovieDBM from "../assets/MovieDBw.png";
+import TransportImage from "../assets/ecofleet.png";
 import type { Project } from "../interface";
 import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import type { Variants } from "framer-motion";
 const projects: Project[] = [
+  {
+    title: "Ecofleet",
+    category: "Transport App",
+    description:
+      "A modern transportation and fleet management plaform designed to help passengers track rides in real time, exploore routes, and enjoy a seamless travel experience with accurate live updates",
+    image: TransportImage,
+    tag: ["DESIGN"],
+    accent: ["bg-violetSecondary text-white", "big-primary text-black"],
+    figma:
+      "https://www.figma.com/design/JUrd5koyKGYiG3gG972EjZ/Untitled?node-id=4-12&t=hZB4S0tYxHZ2Nrwo-0",
+  },
+  {
+    title: "MovieDB",
+    category: "Movie Recommendation app",
+    description:
+      "A modern movie discovery and recommendation platform designed to help users explore trending films, view details, and find what to watch next with ease.",
+    image: MovieDBM,
+    tag: ["DESIGN", "FRONTEND"],
+    accent: ["bg-violetSecondary text-white", "bg-primary text-black"],
+    figma:
+      "https://www.figma.com/design/3nRBsjoXXmj9rtZ4ltoVKE/RRA?t=NNGj3op7MQi29Z79-0",
+    github:
+      "https://www.figma.com/design/9PPe2jq3wwQBupOpblEyRk/Movie-Database?t=NNGj3op7MQi29Z79-0",
+    live: "https://movie-database-two-kappa.vercel.app/",
+  },
   {
     title: "Equity",
     category: "Banking app",
@@ -43,20 +69,6 @@ const projects: Project[] = [
     accent: ["bg-amberThirdly text-black"],
     figma:
       "https://www.figma.com/design/3nRBsjoXXmj9rtZ4ltoVKE/RRA?t=NNGj3op7MQi29Z79-0",
-  },
-  {
-    title: "MovieDB",
-    category: "Movie Recommendation app",
-    description:
-      "A modern movie discovery and recommendation platform designed to help users explore trending films, view details, and find what to watch next with ease.",
-    image: MovieDBM,
-    tag: ["DESIGN", "FRONTEND"],
-    accent: ["bg-violetSecondary text-white", "bg-primary text-black"],
-    figma:
-      "https://www.figma.com/design/3nRBsjoXXmj9rtZ4ltoVKE/RRA?t=NNGj3op7MQi29Z79-0",
-    github:
-      "https://www.figma.com/design/9PPe2jq3wwQBupOpblEyRk/Movie-Database?t=NNGj3op7MQi29Z79-0",
-    live: "https://movie-database-two-kappa.vercel.app/",
   },
 ];
 
