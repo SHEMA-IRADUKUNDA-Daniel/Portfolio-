@@ -99,7 +99,7 @@ At first, it was simply about exploring new places and seeing landscapes I had o
 
 My first hikes taught me patience and discipline. Hiking is never just about walking—it tests your mindset, endurance, and willingness to keep going even when the path gets steep. Every trail became a reminder that progress is often slow, but always worth it.
 
-As time went on, hiking became part of my lifestyle. I started planning trips around destinations with strong adventure experiences—national parks, mountain trails, lakes, and hidden viewpoints. Places like Akagera, Gahinga, and other scenic routes made me appreciate not only the beauty of nature but also the stories behind those places.
+As time went on, hiking became part of my lifestyle. I started planning trips around destinations with strong adventure experiences—national parks, mountain trails, lakes, and hidden viewpoints. Places like Volcano nationa park, Nyungunwe national park, Akagera nation park and other scenic routes made me appreciate not only the beauty of nature but also the stories behind those places.
 
 It also shaped my content creation journey. I began capturing those moments through photos and videos, sharing not just destinations but the feeling of being there—the early morning starts, the long climbs, the unexpected views, and the peace at the summit.
 
